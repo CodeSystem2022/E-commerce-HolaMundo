@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Bienvenido a palta
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="registro-titulo">
+        <h2>Nuevos Usuarios de Palta</h2>
+    </div>
+   
+    <form class="registro-form" action="{{url_for('app.register')}}" method="POST">
+        <label for="Nombre">Nombre y Apellido</label>
+        <input type="username" placeholder="Nombre" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Correo electrónico" name="email" required>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="password" required>
+        
+        <label for="repetir-contrasena">Repetir Contraseña:</label>
+        <input type="password" name="repeat_password" required>
+        
+        <label for="direccion">Dirección:</label>
+        <input type="address" name="address" required>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="phone" name="phone" required>
+
+    <button type="submit">Crear cuenta</button>
+    </form>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
+
