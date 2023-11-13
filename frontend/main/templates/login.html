@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Bienvenido a palta
+{% endblock %}
+
+
+{% block content %}
+
+<div class="login-container">
+    <h2>Ingresá a tu cuenta de Palta</h2>
+    <form action="{{url_for('app.login')}}" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+        
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="password" required>
+        
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+    {% if error %}
+        <h1>{{error}}</h1>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
+
