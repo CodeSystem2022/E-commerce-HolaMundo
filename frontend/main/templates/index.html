@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Bienvenido a palta
+{% endblock %}
+
+
+{% block content %}
+
+<div class="video-container">
+    <video autoplay muted loop>
+      <source src="{{url_for('static', filename='videos/presentation.mp4')}}" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+
+    <!-- Texto "Palta" -->
+    <div class="title">
+      <h1>Palta</h1>
+      <p>Delivery de comidas saludables</p>
+      <a href="../templates/producto.html">Pedi ya</a>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
+
+{% block footer %}   
+{% endblock %}
+
