@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Bienvenido a palta
+{% endblock %}
+
+
+{% block content %}
+    <div class="carrito_final">
+
+        {% if products_in_cart%}
+            {% for product in products_in_cart %} 
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        {{product.name}}
+                    </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">{{product.description}}</div>
+                        <div class="accordion-body">Precio: ${{product.price}}</div>
+                    <form action="/eliminar_producto" method="post">
+                        <input type="hidden" name="product_id" value="{{ product.id }}">
+                        <button type="submit" class="btn btn-danger cart-button px-5">Eliminar</button>
+                    </form>
+                    </div>
+                </div>
+                </div>
+            {% endfor %}
+
+            <h2 class="total-price">Precio Total: ${{ total_price }}</h2>
+
+            {% if products_in_cart %}
+                <form action="/pagar" method="post">
+                    <input type="hidden" name="product" value="{{ product }}">
+                    <input type="hidden" name="total_price" value="{{ total_price }}">
+                    <input type="text" name="description" placeholder="Detalle de pedido">
+                    <button type="submit" class="btn btn-danger cart-button px-5">Pagar</button>
+                </form>
+            {% endif %}
+
+        {% else %}
+            <h1>No hay productos</h1>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+
+
+</script>
+
+{% endblock %}
