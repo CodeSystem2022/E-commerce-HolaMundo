@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Bienvenido a palta
+{% endblock %}
+
+
+{% block content %}
+
+{% if user %}
+<!-- Establecemos un contenedor que centra la tarjeta -->
+<div class="container d-flex justify-content-center">
+    <div class="card text-center" style="width: 40rem;">
+      <!-- El contenido de la tarjeta va aquí -->
+      <div class="card text-center">
+        <div class="card-header">
+          Pago aceptado!
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Tu comida se está preparando</h5>
+          <p class="card-text">Detalles de tu pedido:
+            <ul>
+                <h5 class="capitalize">Nombre: {{ user.username|capitalize }}</h5>
+                <h5 class="capitalize">Direccion: {{ user.address|capitalize }}</h5>
+                <h5 class="capitalize">Productos:</h5>
+                {% for product in products %}
+                    <div class="h5">{{ product.name|capitalize }}</div>
+                    
+                {% endfor %}
+                <h5 class="capitalize">Precio: {{ total_price }}</h5>
+                
+
+            </ul>
+          </p>
+          {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+          {% endif %}
+          <a href="{{url_for('app.food')}}" class="btn btn-primary">Seguir comprando</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <!-- No hay información del usuario -->
+  <p>Usuario no disponible</p>
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
+
