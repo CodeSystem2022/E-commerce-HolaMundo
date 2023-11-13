@@ -80,12 +80,14 @@ Se utiliza SQLite como base de datos. Los componentes principales de la base de 
 
 
 ## **8. EJecución del proyecto**:
+
+Antes que nada, hay que instalar en una máquina virtual Ubuntu 22.04 (entorno trabajado por todo el equipo), ya que el proyecto fue pensando para trabajarse de esa manera, porque en la práctica real, el proyecto deberia estar levnatando en una página web. Una vez instalado ubuntu, e instalarle python y sqlite , seguir los siguientes pasos:
+
 1) Clonar repositorio
 2) Configurar variables de entorno (.env)
 3) Instalar los requerimentos de backend y front end con pip install -r requirements.txt (tanto front como back)
 4) Abrir cada carpeta en ventanas distintas de visual studio code y en ambos ejecutar app.py
 5) Entrar a localhost:3000/index y visualizar el proyecto
-
 
 ## **9. Desarrolladores**:
   
