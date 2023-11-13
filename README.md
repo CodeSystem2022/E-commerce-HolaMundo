@@ -80,7 +80,7 @@ Se utiliza SQLite como base de datos. Los componentes principales de la base de 
 
 ## **8. Ejecución del proyecto**:
 
-Antes que nada, hay que instalar en una máquina virtual Ubuntu 22.04 (entorno trabajado por todo el equipo), ya que el proyecto fue pensando para trabajarse de esa manera, porque en la práctica real, el proyecto deberia estar levnatando en una página web. Una vez instalado ubuntu, e instalarle python y sqlite , seguir los siguientes pasos:
+Antes que nada, hay que instalar en una máquina virtual Ubuntu 22.04 (entorno trabajado por todo el equipo), ya que el proyecto fue pensando para trabajarse de esa manera. En la práctica real, el proyecto debería estar levantando en una página web. Una vez instalado ubuntu, e instalarle python y sqlite , seguir los siguientes pasos:
 
 1) Clonar repositorio
 2) Configurar variables de entorno (.env)
