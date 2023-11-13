@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Bienvenido a palta
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% if foods %}
+            {% for food in foods %}
+                <div class="col">
+                    <div class="card">
+                        {% if images_paths %}
+                            <!-- Cambiado product.image_id a food.image_id -->
+                            <img src="{{ images_paths[food.image_id] }}" class="card-img-top" alt="Producto 1" style="width: 355px; height: 355px;">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{food.name}}</h5>
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-4 col-xl-4">
+                                    <p>Precio: </p>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-8 col-xl-8">
+                                    <p>$ {{food.price}}</p>
+                                </div>
+                                <div class="col-12">
+                                    <p>{{food.description}}</p>
+                                </div>
+                                <div class="col-12">
+                                    <div class="center">
+                                        <div class="buttons d-flex flex-row">
+                                            <form action="/agregar_producto" method="post">
+                                                <input type="hidden" name="product_id" value="{{ food.id }}">
+                                                <input type="hidden" name="product_name" value="{{ food.name }}">
+                                                <input type="hidden" name="product_price" value="{{ food.price }}">
+                                                <input type="hidden" name="product_description" value="{{ food.description }}">
+                                                <button type="submit" class="btn btn-success cart-button px-5">Añadir al carrito</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h1>No hay productos</h1>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
