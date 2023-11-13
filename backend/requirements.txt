@@ -1,0 +1,6 @@
+Flask == 2.3.3
+flask-restful == 0.3.10
+python-dotenv == 1.0.0
+flask_sqlalchemy == 3.0.2
+flask-marshmallow == 0.14.0
+flask-jwt-extended == 4.5.3

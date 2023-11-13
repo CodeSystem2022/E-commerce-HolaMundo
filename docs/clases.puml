@@ -1,0 +1,62 @@
+@startuml Class 
+
+class User {
+    
+
+    id = Int
+        username = String
+            email = String
+            password = String
+            phone  = Int
+            role = String
+            address = String
+        + login()+ logout()+ register()+ update()+ delete()+ makeOrder()+ cancelOrder()+ viewOrder()+ viewProduct()+ viewProfile()+ viewCart()+ viewHistory()
+
+}
+
+class Food {
+    
+
+    id = Int
+        name = String
+            price = float
+            description = String
+            category = String
+            image_id = Int
+
+}
+
+class Image {
+    
+
+    id = Int
+
+}
+
+class Product {
+    
+
+    id = Int
+        order_id = Int
+            food_id = Int
+
+}
+
+class Order {
+    
+
+    id = Int
+        user_id = Int 
+            quantity = Int
+            total_price = float
+            status = String
+            description = String
+        + addProduct()+ removeProduct()
+
+}
+
+User --l--> Order
+Order --l--> Product
+Food --r--> Product
+Image -u-> Food
+@enduml
